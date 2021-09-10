@@ -19,13 +19,13 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
         <div className="ui piled segments">
           <div className="ui segment brand">
             <a
-              href="https://github.com/edwardBenedict"
+              href="https://github.com/oguzhancvdr"
               className="design"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <code>{"<ed8en/>"}</code>
-              <span className="design header">design</span>
+              <code>{"<Roy/>"}</code>
+              <span className="design header"> design</span>
             </a>
           </div>
         </div>
