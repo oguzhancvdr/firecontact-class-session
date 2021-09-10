@@ -39,7 +39,8 @@ SOLUTION
 
 ## Expected Outcome
 
-![Project 009 Snapshot](firecontact.gif)
+![fire_contact](https://user-images.githubusercontent.com/67653402/132840466-08446274-60ad-4f0c-bad5-d47bf67903cc.gif)
+
 
 ## Objective
 
