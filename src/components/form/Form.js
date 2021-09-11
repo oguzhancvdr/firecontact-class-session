@@ -1,9 +1,7 @@
 import { Button, Form, Grid, Segment } from "semantic-ui-react";
 import { options } from "../../utils/constants";
-const FormComponent = ({ info, setInfo }) => {
-  const handleSubmit = () => {
-    console.log("info: ", info);
-  };
+const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
+
   const handleInputChange = (e) => {
     // const name = e.target.name;
     // const value = e.target.value;
@@ -33,7 +31,7 @@ const FormComponent = ({ info, setInfo }) => {
           </div>
         </div>
         <h2 className="contact-header">Addd Contact</h2>
-        <Form size="large" onSubmit={handleSubmit}>
+        <Form size="large" onSubmit={handleFormSubmit}>
           <Segment stacked>
             <Form.Input
               fluid
