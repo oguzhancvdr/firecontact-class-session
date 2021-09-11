@@ -1,5 +1,5 @@
 import { Table, Icon } from "semantic-ui-react";
-import { useFetch } from "../../utils/functions";
+import { deleteHandler, useFetch } from "../../utils/functions";
 
 const Contacts = () => {
   const { contactList, isLoading } = useFetch();
@@ -38,7 +38,7 @@ const Contacts = () => {
                 <Table.Cell>{item.username.toUpperCase()}</Table.Cell>
                 <Table.Cell>{item.phoneNumber}</Table.Cell>
                 <Table.Cell>{item.gender}</Table.Cell>
-                <Table.Cell>
+                <Table.Cell onClick={() => deleteHandler(item.id)}>
                   <Icon name="delete" />
                 </Table.Cell>
                 <Table.Cell>

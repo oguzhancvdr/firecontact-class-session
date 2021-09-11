@@ -1,9 +1,11 @@
 import firebase from "./firebase";
 import { useState, useEffect } from "react";
+import { successToastify } from "./customToasitfy";
 
 export const addInfo = (info) => {
   const contactRef = firebase.database().ref("contact");
   contactRef.push(info);
+  successToastify("Added successfully");
 };
 
 export const useFetch = () => {
@@ -27,3 +29,9 @@ export const useFetch = () => {
 
   return { contactList, isLoading };
 };
+
+export const deleteHandler = (id) => {
+    const contactRef = firebase.database().ref("contact").child(id);
+    contactRef.remove();
+    successToastify("Deleted successfully");
+}
