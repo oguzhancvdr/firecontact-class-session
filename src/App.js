@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Contacts from "./components/contacts/Contacts";
 import FormComponent from "./components/form/Form";
-import { addInfo } from "./utils/functions";
+import { addInfo, editHandler } from "./utils/functions";
 
 const initialState = { username: "", phoneNumber: "", gender: "NO INFO" };
 
@@ -11,8 +11,17 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    addInfo(info);
+    if(info?.id){
+      editHandler(info)
+    }else{
+      addInfo(info)
+    }
+    setInfo(initialState)
   };
+
+  const updateFormHandler = (item) => {
+    setInfo({...item})
+  }
 
   return (
     <div className="App">
@@ -22,7 +31,7 @@ function App() {
         info={info}
         setInfo={setInfo}
       />
-      <Contacts />
+      <Contacts className="contacts" updateFormHandler={updateFormHandler} />
       <ToastContainer />
     </div>
   );

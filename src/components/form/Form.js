@@ -66,7 +66,7 @@ const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
               required
             />
             <Button color="teal" fluid size="large" type="submit">
-              Add
+              {info.id ? "Update" : "Add"}
             </Button>
           </Segment>
         </Form>

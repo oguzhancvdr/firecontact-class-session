@@ -35,3 +35,9 @@ export const deleteHandler = (id) => {
     contactRef.remove();
     successToastify("Deleted successfully");
 }
+
+export const editHandler = (info) => {
+    const contactRef = firebase.database().ref("contact").child(info.id);
+    contactRef.update(info)
+    successToastify("Updated Successfully")
+}
