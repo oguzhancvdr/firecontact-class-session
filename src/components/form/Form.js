@@ -48,7 +48,7 @@ const FormComponent = () => {
               // value={info.gender.toLowerCase()}
               placeholder="Gender"
               name="gender"
-              fluid
+              fluid      
               selection
               required
             />
