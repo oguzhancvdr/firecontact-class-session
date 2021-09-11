@@ -1,14 +1,18 @@
 import firebase from "firebase/app";
 import "firebase/database";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDNa0dLplPL2ipPIgH7gWwou24FrFlqj7k",
-  authDomain: "inclass-firecontact.firebaseapp.com",
-  projectId: "inclass-firecontact",
-  storageBucket: "inclass-firecontact.appspot.com",
-  messagingSenderId: "647662649476",
-  appId: "1:647662649476:web:61fc0d01de381eb61ec2d1",
+const devConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
+
+const prodConfig = {};
+
+const firebaseConfig = process.env.NODE_ENV === "development" ? devConfig : prodConfig;
 
 firebase.initializeApp(firebaseConfig);
 
