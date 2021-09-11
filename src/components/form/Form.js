@@ -1,10 +1,25 @@
 import { Button, Form, Grid, Segment } from "semantic-ui-react";
 import { options } from "../../utils/constants";
-const FormComponent = () => {
+const FormComponent = ({ info, setInfo }) => {
+  const handleSubmit = () => {
+    console.log("info: ", info);
+  };
+  const handleInputChange = (e) => {
+    // const name = e.target.name;
+    // const value = e.target.value;
+    const { name, value } = e.target;
+    setInfo({ ...info, [name]: value.toUpperCase() });
+  };
+
+  const handleOptionsChange = (_, result) => {
+    const { name, value } = result;
+    setInfo({ ...info, [name]: value.toUpperCase() });
+  };
+
   return (
     <Grid textAlign="center" verticalAlign="middle">
       <Grid.Column style={{ width: "300px" }}>
-        <div className="ui pilled segments">
+        <div className="ui pilled segment">
           <div className="ui pilled brand">
             <a
               href="https://github.com/oguzhancvdr"
@@ -18,7 +33,7 @@ const FormComponent = () => {
           </div>
         </div>
         <h2 className="contact-header">Addd Contact</h2>
-        <Form size="large" onSubmit={() => {}}>
+        <Form size="large" onSubmit={handleSubmit}>
           <Segment stacked>
             <Form.Input
               fluid
@@ -26,8 +41,8 @@ const FormComponent = () => {
               icon="user"
               iconPosition="left"
               placeholder="Name"
-              // value={info.username}
-              // onChange={handleInputChange}
+              value={info.username}
+              onChange={handleInputChange}
               required
             />
             <Form.Input
@@ -37,18 +52,18 @@ const FormComponent = () => {
               iconPosition="left"
               placeholder="Phone Number"
               type="text"
-              // value={info.phoneNumber}
-              // onChange={handleInputChange}
+              value={info.phoneNumber}
+              onChange={handleInputChange}
               required
             />
 
             <Form.Dropdown
               options={options}
-              // onChange={handleOptionChange}
-              // value={info.gender.toLowerCase()}
+              onChange={handleOptionsChange}
+              value={info.gender.toLowerCase()}
               placeholder="Gender"
               name="gender"
-              fluid      
+              fluid
               selection
               required
             />
