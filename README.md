@@ -80,11 +80,11 @@ Build a FireContact App using ReactJS.
 
 - You can add additional functionalities to your app.
 - .env/
-    REACT_APP_API_KEY=
-    REACT_APP_AUTH_DOMAIN=
-    REACT_APP_PROJECT_ID=
-    REACT_APP_STORAGE_BUCKET=
-    REACT_APP_MESSAGING_SENDER_ID=
-    REACT_APP_APP_ID=
+    - REACT_APP_API_KEY=
+    - REACT_APP_AUTH_DOMAIN=
+    - REACT_APP_PROJECT_ID=
+    - REACT_APP_STORAGE_BUCKET=
+    - REACT_APP_MESSAGING_SENDER_ID=
+    - REACT_APP_APP_ID=
 
 **<p align="center">&#9786; Happy Coding &#9997;</p>**
