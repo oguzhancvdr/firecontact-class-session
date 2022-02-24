@@ -58,6 +58,8 @@ Build a FireContact App using ReactJS.
 
 - ReactJS
 
+- Docker
+
 ### At the end of the project, students will be able to;
 
 - improve coding skills within HTML & CSS & JS & ReactJS.
